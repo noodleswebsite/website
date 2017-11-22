@@ -1,0 +1,25 @@
+nav#include
+    position: fixed
+    top: 40vh
+    right: 1em
+    @media screen and (max-width: $large)
+        display: none
+    a
+        @extend %link
+        padding: 0.2em 1em
+        color: $link
+        display: block
+        text-align: center
+        background-color: $link-bg
+    a:hover
+        background-color: #ff097d
+    ul
+        margin: 0
+        padding: 0
+        background-color: $bg-color
+        li
+            font-size: 1.5em
+            list-style-type: none
+            width: 100%
+            padding: 0.2em
+            margin: 0.2em

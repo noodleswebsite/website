@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% include nav.html %}
+<div id="page-wrapper">
+    <div id="post-wrapper">
+        <div id="post-full">
+            <div id="post-header">
+                {% if page.header %}
+                    {% include urlfolderpage.html %}
+                    <img id="header" src="/assets/img/{{ urlFolder }}/{{ page.header }}" alt="{{ page.title }} header">
+                    <h3 id="header">{{ page.title }}</h3>
+                {% else %}
+                    <h3 id="no-header">{{ page.title }}</h3>                
+                {% endif %}
+                <aside>
+                    <span class="black-bg">author:</span> <a href="/people/{{ page.author }}.html">{{ page.author }}</a>
+                    <span class="black-bg">tags:</span> <a href="/">tag1</a> <a href="/">super long tag</a> <a href="/">tag4</a> <a href="/">longer tag</a> 
+                </aside>
+            </div>
+            {{ content }}
+            <p id="back"><a href="/">back</a></p>
+        </div>
+    </div>
+    {% include footer.html %}
+</div>

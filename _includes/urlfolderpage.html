@@ -1,0 +1,3 @@
+{% assign urlSize = page.url | size | minus:2 %}
+{% assign urlSliced = page.url | slice: 1, urlSize %}
+{% assign urlFolder = urlSliced | replace:"/","-" %}

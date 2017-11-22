@@ -1,0 +1,126 @@
+// Landing Page CSS
+.wrapper
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: 1fr auto
+    height: 100%
+main#landing
+    grid-row: 1/2
+    grid-column: 2/5
+    @media screen and (max-width: $medium)
+        grid-column: 1/6
+footer#landing
+    grid-row: 2/3
+    grid-column: 1/7
+    background-color: black
+    color: white
+    text-align: center
+div#post-landing
+    text-align: center
+    font-size: 1.5em
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(2, auto)
+    grid-template-areas: "title" "article"
+    margin-bottom: 2em
+    article
+        grid-area: article
+        margin: 0
+        background-color: $bg-color
+        .post-landing-header
+            margin: 0.3em 0
+            width: 100%
+            max-height: 4em 
+            overflow: hidden
+            img
+                @media screen and (max-width: $large)
+                    display: none
+                display: block
+                max-width: 100%
+                height: auto
+                margin: -20% auto
+                position: relative
+                z-index: 1
+            aside
+                @media screen and (max-width: $large)
+                    margin: 0
+                    span.tags
+                        display: block
+                position: relative
+                margin: 1em 0 0.3em 0
+                color: black
+                z-index: 2
+                span.black-bg
+                    @extend %link
+                    color: black
+                    background-color: $bg-color
+                    padding: 0.2em 0.3em
+        a
+            background-color: $link-bg
+        p
+            margin: 0.5em
+            text-align: left
+            a
+                background-color: $link-bg
+        p.img
+            text-align: center
+            img
+                max-width: 90%
+                height: auto
+        p.caption
+            text-transform: uppercase
+            text-align: center
+            font-size: 0.6em
+            // color: white
+            // background-color: black
+            // max-width: 90%
+            margin: 0
+        p#full-post
+            width: 50%
+            padding: 0
+            margin: 0.2em auto
+            text-align: center
+            a
+                display: block
+                background-color: $bg-color
+                text-decoration: line-through
+                font-size: 1.2em
+                color: $pink
+            a:hover
+                color: black
+    h4
+        grid-area: title
+        font-size: 2.2em
+        opacity: 0.2
+        margin: 0
+        z-index: 1
+    h3
+        grid-area: title
+        height: 100%
+        margin: 0
+        font-size: 3em
+        z-index: 2
+        a
+            padding: 0
+            text-transform: None
+            display: block
+            font-size: 0.8em
+            color: $pink      
+        
+        a:hover
+            color: black
+            background-color: $bg-color
+    a
+        @extend %link
+        color: $link
+        padding: 0.2em 1em
+
+    a:hover
+        background-color: $pink
+
+
+%link
+    text-decoration: none
+    text-transform: uppercase
+    font-size: 0.6em
+    font-weight: bold    
