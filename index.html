@@ -1,0 +1,37 @@
+---
+layout: landing
+title: N o o d l e s W e b s i t e
+---
+<div class="wrapper">
+    <main id="landing">
+        {% for post in site.posts %}
+            <div id="post-landing">
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                <h4>Everything is garbage</h4>
+                <article>
+                    <div class="post-landing-header">
+                        <aside>
+                            <span class="author"><span class="black-bg">author:</span> <a href="/people/{{ post.author }}.html">{{ post.author }}</a></span>
+                            <span class="tags"><span class="black-bg">tags:</span> <a href="/">tag1</a> <a href="/">super long tag</a> <a href="/">tag4</a> <a href="/">longer tag</a></span>
+                        </aside>
+                        {% if post.header %}
+                        {% include urlfolder.html %}
+                        <img src="/assets/img/{{ urlFolder }}/{{ post.header }}" alt="{{ post.title }} header">
+                        {% endif %}
+                    </div>
+                    {{ post.content | truncatewords: 150 }}
+                    {% assign wordCount = post.content | number_of_words %}
+                    {% if  wordCount > 150 %}
+                    <p id="full-post"><a href="{{ post.url }}">Full post</a></p>
+                    {% endif %}
+                </article>
+            </div>
+        {% endfor %}
+    </main>
+
+    {% include nav.html %}
+
+    <footer id="landing">
+        Inquires, insults and everything else can be done through the IRC channel which is named #noodles and is located in the Rizon network. Design and code by dude1, 2017.
+    </footer>
+</div>
